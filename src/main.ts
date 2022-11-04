@@ -1,6 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router/index'
-// import axios from 'axios'
+import { createApp } from "vue";
+import router from "@/router";
+import echarts from '@/utils/echarts';
+import App from "@/App.vue";
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+
+app.config.globalProperties.$echarts = echarts
+
+app.use(router);
+app.mount("#app");

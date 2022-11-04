@@ -1,30 +1,16 @@
-import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
-    path: "/:catchAll(.*)",
-    redirect: "/login"
-  },
-  {
-    path: '/login', 
-    name: 'login',
-    component: () => import('@/pages/login/index.vue')
-  },
-  { 
-    path: '/404',
-    name: '404',
-    component:  () => import('@/pages/errorPages/404.vue')
-  },
-  { 
-    path: '/wel',
-    name: 'wel',
-    component:  () => import('@/views/wel/index.vue')
-  },
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/index.vue')
+  }
 ]
 
-const router: Router = createRouter({
-  routes,
-  history: createWebHashHistory()
-})
-
-export default router
+export default createRouter(
+  {
+    history: createWebHistory(),
+    routes
+  }
+)

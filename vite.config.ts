@@ -1,33 +1,39 @@
+import path from "path";
 import { defineConfig } from "vite";
-import { resolve } from "path";
-import vue from '@vitejs/plugin-vue';
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-    base: "",
-    plugins:[vue()],
-    // 配置文件别名
-    resolve: {
-      alias: {
-        "@": resolve(__dirname, "src"),
-        "@c": resolve(__dirname, "src/components"),
-    }
-    },
-    // 打包配置
-    build: {
-      target: 'modules',
-      outDir: 'dist', //指定输出路径
-      assetsDir: 'static', // 指定生成静态资源的存放路径
-    },
-    // 本地运行配置，及反向代理配置
+    plugins: [vue()],
+    base: "./",
     server: {
-        cors: true, // 默认启用并允许任何源
-        open: true, // 在服务器启动时自动在浏览器中打开应用程序
+        host:"127.0.0.1",
+        port: 1888,
+        // 是否自动在浏览器打开
+        open: false,
+        // 是否开启 https
+        https: false,
         proxy: {
-          '/api': {
-            target: 'http://192.168.0.2:8080', 
-            changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, '')
-          }
-        }
-    }
-})
+            // '/api': {
+            //     target: 'http://localhost:3333/',
+            //     changeOrigin: true,
+            //     rewrite: (pathStr) => pathStr.replace('/api', '')
+            // },
+        },
+    },
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./src"),
+            "public": path.resolve(__dirname, "./public"),
+        },
+    },
+    optimizeDeps: {
+        include: [
+        ],
+    },
+    build: {
+        // 压缩
+        minify: "esbuild",
+        assetsDir: "",
+        outDir: `./dist/`,
+    },
+});
