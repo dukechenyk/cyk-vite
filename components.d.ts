@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     ACol: typeof import('ant-design-vue/es')['Col']
     ARow: typeof import('ant-design-vue/es')['Row']
     Bar: typeof import('./src/components/Bar.vue')['default']
+    Dasbord: typeof import('./src/components/Dasbord.vue')['default']
     Line: typeof import('./src/components/Line.vue')['default']
     Map: typeof import('./src/components/Map.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

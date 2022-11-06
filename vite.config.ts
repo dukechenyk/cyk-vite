@@ -9,7 +9,8 @@ import legacyPlugin from '@vitejs/plugin-legacy'
 export default defineConfig({
     plugins: [
       Components({
-        resolvers: [AntDesignVueResolver()],
+        dirs: ['src/components'],
+        resolvers: [AntDesignVueResolver({resolveIcons: true,})],
       }),
       //在plugins配置数组里添加gzip插件
       viteCompression({

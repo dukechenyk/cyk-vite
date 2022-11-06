@@ -1,5 +1,5 @@
 <template>
-	<div id="mayMap"></div>
+	<div id="mayMap" class="map"></div>
 </template>
 
 <script setup lang="ts">
@@ -122,4 +122,9 @@ const changetype = () => {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.map{
+  height: 100%;
+  width: 100%;
+}
+</style>
