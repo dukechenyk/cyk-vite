@@ -14,6 +14,10 @@ declare module '@vue/runtime-core' {
     Dasbord: typeof import('./src/components/Dasbord.vue')['default']
     Line: typeof import('./src/components/Line.vue')['default']
     Map: typeof import('./src/components/Map.vue')['default']
+    Numerical: typeof import('./src/components/Numerical.vue')['default']
+    Projecter: typeof import('./src/components/Projecter.vue')['default']
+    Projection: typeof import('./src/components/Projection.vue')['default']
+    Round: typeof import('./src/components/Round.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

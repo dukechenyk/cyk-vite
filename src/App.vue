@@ -24,5 +24,8 @@ body {
   width: 100%;
   overflow: hidden;
   background-color: rgb(5,6,67);
+  background-image: url(./assets/slices/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

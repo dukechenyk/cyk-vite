@@ -30,9 +30,8 @@ const changetype = () => {
 			style: {
 				text: props.nameTitle,
 				textAlign: 'center', //居中对齐
-				fill: 'rgb(128,228,254)', //填充色
-				fontSize: 18,
-        fontWeight: 'bold'
+				fill: '#EDF6FF', //填充色
+				fontSize: 16,
 			}
 		},
 		grid: {
@@ -48,7 +47,7 @@ const changetype = () => {
 				show: false
 			}
 		},
-		barMaxWidth: 12, //圆环宽度
+		barMaxWidth: 10, //圆环宽度
 		radiusAxis: {
 			show: false,
 			type: 'category'
@@ -76,11 +75,11 @@ const changetype = () => {
 								colorStops: [
 									{
 										offset: 0,
-										color: '#086CAF' // 0% 处的颜色
+										color: 'rgba(175, 255, 220, 1)' // 0% 处的颜色
 									},
 									{
 										offset: 1,
-										color: '#1598FF' // 100% 处的颜色
+										color: 'rgba(0, 216, 255, 1)' // 100% 处的颜色
 									}
 								],
 								global: false // 缺省为 false
@@ -109,11 +108,11 @@ const changetype = () => {
 								colorStops: [
 									{
 										offset: 0,
-										color: 'rgb(96,86,84)' // 0% 处的颜色
+										color: 'rgba(29, 39, 70, 0.6700)' // 0% 处的颜色
 									},
 									{
 										offset: 1,
-										color: 'rgba(0,0,0,.1)' // 100% 处的颜色
+										color: 'rgba(29, 39, 70, 0.6700)' // 100% 处的颜色
 									}
 								],
 								global: false // 缺省为 false
@@ -141,7 +140,7 @@ const changetype = () => {
 					show: true,
 					length: -10,
 					lineStyle: {
-						color: '#086CAF', //用颜色渐变函数不起作用
+						color: '#0060FF', //用颜色渐变函数不起作用
 						width: 2
 					}
 				},
@@ -151,7 +150,7 @@ const changetype = () => {
 				axisLabel: {
 					show: true,
 					distance: 25,
-					color: 'rgb(132,9,68)',
+					color: 'RGBA(119, 135, 185, 1)',
 					fontSize: 12
 				},
 				splitLabel: {
@@ -183,7 +182,7 @@ const changetype = () => {
 							textAlign: 'center'
 						},
 						percent: {
-							fontSize: 16,
+							fontSize: 12,
 							textAlign: 'center'
 						}
 					},
@@ -207,7 +206,7 @@ const changetype = () => {
 				// radius: '70%',
 				min: 0, //最小刻度
 				max: 100, //最大刻度
-				splitNumber: 10, //刻度数量
+				splitNumber: 6, //刻度数量
 				startAngle: 225,
 				endAngle: -45,
 				axisLine: {
@@ -224,7 +223,7 @@ const changetype = () => {
 					show: true,
 					splitNumber: 10,
 					lineStyle: {
-						color: '#086CAF', //用颜色渐变函数不起作用
+						color: 'rgba(60, 76, 124, 1)', //用颜色渐变函数不起作用
 						width: 2
 					},
 					length: -8

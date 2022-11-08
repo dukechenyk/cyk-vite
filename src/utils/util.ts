@@ -6,3 +6,8 @@ export const serialize = (data:any) => {
   });
   return list.join('&');
 };
+
+// 获取assets静态资源
+export const getAssetsFile = (url: string) => {
+  return new URL(`../assets/slices/${url}`, import.meta.url).href;
+};
