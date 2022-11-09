@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import router from "@/router";
 import echarts from '@/utils/echarts';
+import "./font/fonts.scss";
 import App from "@/App.vue";
 
 const app = createApp(App);
