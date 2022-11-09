@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import viteCompression from 'vite-plugin-compression'//引入
 import legacyPlugin from '@vitejs/plugin-legacy'
+import vueJsx from '@vitejs/plugin-vue-jsx';
  
 export default defineConfig({
     plugins: [
@@ -25,7 +26,8 @@ export default defineConfig({
         targets: ['chrome 52'], // 需要兼容的目标列表，可以设置多个
         additionalLegacyPolyfills: ['regenerator-runtime/runtime'] // 面向IE11时需要此插件
       }),
-      vue()
+      vue(),
+      vueJsx({})
     ],
     base: "./",
     server: {
@@ -52,6 +54,11 @@ export default defineConfig({
     optimizeDeps: {
         include: [
         ],
+    },
+    esbuild: {
+      jsxFactory: 'h',
+      jsxFragment: 'Fragment',
+      jsxInject: `import React from 'react'`
     },
     build: {
       rollupOptions: {
